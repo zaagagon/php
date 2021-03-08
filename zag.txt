@@ -5,3 +5,9 @@ marzo 7
 ===========
 instalacion de extension php para visual studio code
 php extension pack que permite instalar dos extensiones mas
+
+archivo de versiones subido exitosamente
+
+segunda prueba
+
+repasar mas subir repositorios a github
