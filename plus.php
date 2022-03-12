@@ -8,7 +8,8 @@
   $total=$N1+$N2;
   //$total=20;
  //$total=$n1+$n2;
- echo "El total de la suma es: ".$total.".\n";
+// echo "El total de la suma es: ".$total.".\n";
+echo "revisando";
  echo "<br>";
  echo "prueba";
     
