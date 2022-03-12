@@ -11,3 +11,6 @@ archivo de versiones subido exitosamente
 segunda prueba
 
 repasar mas subir repositorios a github
+
+// no corre php 
+marzo 12
