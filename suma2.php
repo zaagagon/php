@@ -7,3 +7,4 @@ foreach ($numeros as $numero) {
 }
 
 echo "Suma: $suma";
+echo "\n";
