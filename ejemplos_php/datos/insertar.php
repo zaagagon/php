@@ -1,9 +1,9 @@
 <?php
 // Conexión a la base de datos (ajusta los valores según tu configuración)
-$servername = "tu_servidor";
-$username = "tu_usuario";
-$password = "tu_contraseña";
-$dbname = "tu_base_de_datos";
+$servername = "localhost";
+$username = "root";
+$password = "123456789";
+$dbname = "prueba";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
