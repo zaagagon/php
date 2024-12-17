@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inserción de Datos</title>
+</head>
+<body>
+    <h1>Insertar Datos</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="edad">Edad:</label><br>
+        <input type="number" id="edad" name="edad"><br><br>
+
+        <label for="pais">País:</label><br>
+        <input type="text" id="pais" name="pais"><br><br>
+
+        <label for="cargo">Cargo:</label><br>
+        <input type="text" id="cargo" name="cargo"><br><br>
+
+        <label for="anios">Años:</label><br>
+        <input type="number" id="anios" name="anios"><br><br>
+
+        <input type="submit" value="Insertar">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Conexión a la base de datos
+        $servername = "tu_servidor";
+        $username = "tu_usuario";
+        $password = "tu_contraseña";
+        $dbname = "tu_base_de_datos";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Verificar la conexión
+        if ($conn->connect_error) {
+            die("Error de conexión: " . $conn->connect_error);
+        }
+
+        // Recibir datos del formulario
+        $nombre = $_POST['nombre'];
+        $edad = $_POST['edad'];
+        $pais = $_POST['pais'];
+        $cargo = $_POST['cargo'];
+        $anios = $_POST['anios'];
+
+        // Preparar y ejecutar la consulta SQL para insertar datos
+        $sql = "INSERT INTO tu_tabla (nombre, edad, pais, cargo, anios) VALUES ('$nombre', $edad, '$pais', '$cargo', $anios)";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Datos insertados correctamente";
+        } else {
+            echo "Error al insertar datos: " . $conn->error;
+        }
+
+        $conn->close();
+    }
+    ?>
+</body>
+</html>
