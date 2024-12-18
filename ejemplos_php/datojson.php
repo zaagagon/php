@@ -20,6 +20,7 @@ function saveData($filePath, $data) {
 // Manejo de acciones
 $data = getData($filePath);
 $updateRecord = null;
+$status = null; // Variable para los mensajes
 
 // Cargar datos para actualizar usando GET
 if (isset($_GET['action']) && $_GET['action'] === 'load' && isset($_GET['id'])) {
@@ -32,7 +33,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'load' && isset($_GET['id'])) 
     }
 }
 
-// Actualizar registro
+// Actualizar, agregar o eliminar registros
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'];
 
@@ -46,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ];
         $data[] = $newRecord;
         saveData($filePath, $data);
+        $status = 'added';
 
     } elseif ($action === 'update') {
         // Actualizar un registro existente
@@ -58,6 +60,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
         saveData($filePath, $data);
+        $status = 'updated';
+
     } elseif ($action === 'delete') {
         // Eliminar un registro
         $idToDelete = $_POST['id'];
@@ -65,10 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             return $record['id'] != $idToDelete;
         });
         saveData($filePath, $data);
+        $status = 'deleted';
     }
 
-    // Redirigir después de la acción
-    header('Location: ' . $_SERVER['PHP_SELF']);
+    // Redirigir con parámetro de estado
+    header('Location: ' . $_SERVER['PHP_SELF'] . '?status=' . $status);
     exit;
 }
 ?>
@@ -79,14 +84,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON con PHP</title>
-    <link rel="stylesheet" href="stylesjon.css">
+  <!--  <link rel="stylesheet" href="stylesjon.css">-->
+    <script>
+        // Mostrar alertas basadas en el parámetro 'status' en la URL
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            if (status === 'added') {
+                alert('Registro agregado exitosamente.');
+            } else if (status === 'updated') {
+                alert('Registro actualizado exitosamente.');
+            } else if (status === 'deleted') {
+                alert('Registro eliminado exitosamente.');
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>Gestión de Datos con JSON y PHP</h1>
 
     <!-- Mostrar datos -->
     <h2>Datos actuales</h2>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -106,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <form method="POST" style="display:inline;">
                         <input type="hidden" name="action" value="delete">
                         <input type="hidden" name="id" value="<?= htmlspecialchars($record['id']) ?>">
-                        <button type="submit">Eliminar</button>
+                        <button type="submit" style="background-color: #dc3545;">Eliminar</button>
                     </form>
                     <!-- Botón para cargar datos en formulario -->
                     <a href="?action=load&id=<?= htmlspecialchars($record['id']) ?>">
@@ -131,7 +150,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="age">Edad:</label>
         <input type="number" id="age" name="age" value="<?= $updateRecord['age'] ?? '' ?>" required>
         <br><br>
-        <button type="submit"><?= $updateRecord ? 'Guardar Cambios' : 'Agregar' ?></button>
+        <button type="submit" style="background-color: #0078D7;">
+            <?= $updateRecord ? 'Guardar Cambios' : 'Agregar' ?>
+        </button>
     </form>
 </body>
 </html>

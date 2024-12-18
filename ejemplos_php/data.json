@@ -1,27 +1,27 @@
-[
-    {
-        "id": 1,
-        "name": "Juan",
-        "age": 25
-    },
-    {
+{
+    "1": {
         "id": 2,
         "name": "Ana",
         "age": 30
     },
-    {
+    "2": {
         "id": 3,
         "name": "Luis",
         "age": 28
     },
-    {
+    "3": {
         "id": 4,
         "name": "Evelio",
         "age": "67"
     },
-    {
+    "4": {
         "id": 5,
         "name": "Spiderman",
         "age": "18"
+    },
+    "5": {
+        "id": 6,
+        "name": "hulk",
+        "age": "23"
     }
-]
+}
