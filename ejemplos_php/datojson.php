@@ -85,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON con PHP</title>
   <!--  <link rel="stylesheet" href="stylesjon.css">-->
+ <link rel="stylesheet" href="../stylesjon.css">
     <script>
         // Mostrar alertas basadas en el parámetro 'status' en la URL
         window.onload = function () {

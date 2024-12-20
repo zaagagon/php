@@ -1,18 +1,13 @@
 {
     "1": {
         "id": 2,
-        "name": "Ana",
-        "age": 30
-    },
-    "2": {
-        "id": 3,
-        "name": "Luis",
-        "age": 28
+        "name": "Julian",
+        "age": "19"
     },
     "3": {
         "id": 4,
-        "name": "Evelio",
-        "age": "67"
+        "name": "Camilo Spiderman",
+        "age": "15"
     },
     "4": {
         "id": 5,
@@ -23,5 +18,10 @@
         "id": 6,
         "name": "hulk",
         "age": "23"
+    },
+    "6": {
+        "id": 7,
+        "name": "Alebua",
+        "age": "99"
     }
 }
