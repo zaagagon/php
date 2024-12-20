@@ -1,0 +1,20 @@
+[
+    {
+        "nombre": "Neo",
+        "edad": 30,
+        "habilidades": [
+            "PHP",
+            "JavaScript",
+            "Python"
+        ]
+    },
+    {
+        "nombre": "Neo",
+        "edad": 30,
+        "habilidades": [
+            "PHP",
+            "JavaScript",
+            "Python"
+        ]
+    }
+]
