@@ -15,6 +15,7 @@
 $personajes=["Deadpool","lovezno","viuda negra"];
 
 echo $personajes;
+//El array $personajes no puede ser tratado como una cadena. 
 ?>
 </body>
 </html>
