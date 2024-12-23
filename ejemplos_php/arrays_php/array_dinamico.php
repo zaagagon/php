@@ -13,6 +13,7 @@ $personajes=[];
 $personajes[]="lolis";
 $personajes[]="pilo";
 $personajes[]="Superman";
+$personajes[]="Deadpool";
 
 print_r($personajes);
 
