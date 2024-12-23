@@ -6,6 +6,8 @@ $estudiantes = [
     ["id" => 3, "nombre" => "Carlos López", "edad" => 19, "carrera" => "Medicina"],
 ];
 
+$cosita=["mouse","keyboard","cpu"];
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +51,23 @@ $estudiantes = [
                     <td><?php echo $estudiante["edad"]; ?></td>
                     <td><?php echo $estudiante["carrera"]; ?></td>
                 </tr>
-            <?php endforeach; ?>
+
+                
+            <?php endforeach;
+            print_r($estudiantes);
+            echo "<br>";
+            echo "<br>";
+            echo "<br>";
+            echo (implode(" ,",$cosita));
+            echo "<br>";
+            echo "<br>";
+            echo "<br>";
+            echo ($estudiantes);
+
+            var_dump($estudiantes);
+            
+
+            ?>
         </tbody>
     </table>
 </body>
