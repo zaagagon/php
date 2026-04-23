@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Resultado de la Suma</h1>
+        <h1 class="text-center">Resultado de la Suma 2026</h1>
 
         <?php
         if (isset($_POST['numero1']) && isset($_POST['numero2'])) {
