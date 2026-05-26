@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f7fb;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #111827;
+}
+
+.menu h2 {
+    color: #38bdf8;
+}
+
+.menu a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #0ea5e9);
+    color: white;
+}
+
+.hero-content {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+}
+
+.logos img {
+    width: 80px;
+    margin: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.contenedor {
+    width: 90%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #1e3a8a;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.principal {
+    background: #0ea5e9;
+}
+
+.agregar {
+    background: green;
+}
+
+.editar {
+    background: orange;
+}
+
+.eliminar {
+    background: red;
+}
+
+.formulario {
+    width: 400px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
