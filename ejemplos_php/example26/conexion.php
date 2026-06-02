@@ -5,6 +5,8 @@ $usuario = "root";
 $password = "";
 $base_datos = "tecnoia";
 
+//variables de conexión a la base de datos
+
 $conexion = new mysqli($host, $usuario, $password, $base_datos, $puerto);
 
 if ($conexion->connect_error) {
