@@ -13,8 +13,12 @@
         // Declarar las variables $a y $b, y asignarles los valores 5 y 10 respectivamente
         $suma = $a + $b;
         // Realizar la suma de $a y $b, y almacenar el resultado en $suma
-        echo "La suma de $a y $b es: $suma";
+        //echo "La suma de $a y $b es: $suma";
         ?>
         <h2>Resultado de la suma :</h2>
+        <p>
+            <?php echo "La suma de $a y $b es: $suma"; ?>
+        </p>
+
 </body>
 </html>
