@@ -35,7 +35,7 @@ try {
         ]);
     } else {
         echo json_encode([
-            "error" => "Error en la autenticación"
+            "error" => "*Error en la autenticación*"
         ]);
     }
 
